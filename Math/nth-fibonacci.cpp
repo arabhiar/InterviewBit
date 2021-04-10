@@ -3,9 +3,9 @@ using namespace std;
 
 #define M 1000000007
 
-vector<long> multiply(vector<long> m1, vector<long> m2)
+vector<long long int> multiply(vector<long long int> m1, vector<long long int> m2)
 {
-    vector<long> ans(4);
+    vector<long long int> ans(4);
     for (int i = 0; i < 4; i++)
     {
         m1[i] %= M;
@@ -18,13 +18,13 @@ vector<long> multiply(vector<long> m1, vector<long> m2)
     return ans;
 }
 
-vector<long> matPower(vector<long> arr, int n)
+vector<long long int> matPower(vector<long long int> arr, int n)
 {
     if (n == 1)
     {
         return arr;
     }
-    vector<long> temp = matPower(arr, n / 2);
+    vector<long long int> temp = matPower(arr, n / 2);
     if (n % 2 == 0)
     {
         return multiply(temp, temp);
@@ -36,21 +36,10 @@ int main()
 {
     int A;
     cin >> A;
-    long s;
-    s = LONG_MAX;
-    cout << s << "\n";
-    printf("The size of char in bytes is: %llu.", sizeof(char));
-    printf("\nThe size of short in bytes is: %llu.", sizeof(short));
-    printf("\nThe size of int in bytes is: %llu.", sizeof(int));
-    printf("\nThe size of long in bytes is: %llu.", sizeof(long));
-    printf("\nThe size of long long in bytes is: %llu.", sizeof(long long));
-    printf("\nThe size of float in bytes is: %llu.", sizeof(float));
-    printf("\nThe size of double in bytes is: %llu.", sizeof(double));
-    printf("\nThe size of long double in bytes is: %llu.", sizeof(long double));
     int ans = 1;
     if (A > 2)
     {
-        vector<long> arr = {1, 1, 1, 0};
+        vector<long long int> arr = {1, 1, 1, 0};
         arr = matPower(arr, A - 1);
         // cout << arr[0] << "\n";
         ans = arr[0] % M;
