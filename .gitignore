@@ -4,3 +4,7 @@
 .cph/
 .vscode/
 **/temp.cpp
+*.exe
+*.exe/
+*.bin
+*.bin/
