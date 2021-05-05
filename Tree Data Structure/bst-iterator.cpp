@@ -232,10 +232,6 @@ int main()
     {
         cout << i.next() << " ";
     }
-    // for (int j = 0; j < 7; j++)
-    // {
-    //     cout << i.next() << " ";
-    // }
 
     cout << endl;
     return 0;
