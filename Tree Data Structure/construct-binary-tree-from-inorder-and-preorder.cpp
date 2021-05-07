@@ -30,43 +30,11 @@ void print2D(TreeNode *root)
     print2DUtil(root, 0);
 }
 
-void preorder(TreeNode *root)
-{
-    if (root == NULL)
-    {
-        return;
-    }
-    cout << root->val << " ";
-    preorder(root->left);
-    preorder(root->right);
-}
-
-void inorder(TreeNode *root)
-{
-    if (root == NULL)
-    {
-        return;
-    }
-    inorder(root->left);
-    cout << root->val << " ";
-    inorder(root->right);
-}
-
-void postorder(TreeNode *root)
-{
-    if (root == NULL)
-    {
-        return;
-    }
-    postorder(root->left);
-    postorder(root->right);
-    cout << root->val << " ";
-}
+int curr = 0;
 
 // helper function for soving problem
 TreeNode *helper(int i, int j, const vector<int> &A, const vector<int> &B)
 {
-    static int curr = 0;
     if (curr < B.size())
     {
         if (i > j)
@@ -95,11 +63,10 @@ int main()
     {
         cin >> B[i];
     }
+
+    curr = 0;
     TreeNode *root = helper(0, A.size() - 1, B, A);
-    // print2D(root);
-    preorder(root);
-    cout << endl;
-    postorder(root);
+    print2D(root);
 
     cout << endl;
     return 0;
