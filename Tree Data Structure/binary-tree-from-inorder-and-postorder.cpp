@@ -30,39 +30,6 @@ void print2D(TreeNode *root)
     print2DUtil(root, 0);
 }
 
-void preorder(TreeNode *root)
-{
-    if (root == NULL)
-    {
-        return;
-    }
-    cout << root->val << " ";
-    preorder(root->left);
-    preorder(root->right);
-}
-
-void inorder(TreeNode *root)
-{
-    if (root == NULL)
-    {
-        return;
-    }
-    inorder(root->left);
-    cout << root->val << " ";
-    inorder(root->right);
-}
-
-void postorder(TreeNode *root)
-{
-    if (root == NULL)
-    {
-        return;
-    }
-    postorder(root->left);
-    postorder(root->right);
-    cout << root->val << " ";
-}
-
 int curr = 0;
 
 // helper function for soving problem
