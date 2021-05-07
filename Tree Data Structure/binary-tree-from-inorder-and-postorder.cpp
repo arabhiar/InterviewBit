@@ -68,12 +68,6 @@ int main()
     curr = 0;
     reverse(B.begin(), B.end());
     TreeNode *root = helper(0, A.size() - 1, A, B);
-    print2D(root);
-
-    preorder(root);
-    cout << endl;
-    postorder(root);
-    cout << endl;
 
     cout << endl;
     return 0;
