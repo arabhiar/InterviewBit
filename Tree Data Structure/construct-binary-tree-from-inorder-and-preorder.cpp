@@ -41,7 +41,7 @@ TreeNode *helper(int i, int j, const vector<int> &A, const vector<int> &B)
         {
             return NULL;
         }
-        int idx = find(A.begin() + i, A.end(), B[curr]) + j + 1 - A.begin();
+        int idx = find(A.begin() + i, A.begin() + j + 1, B[curr]) - A.begin();
         TreeNode *newNode = new TreeNode(B[curr++]);
         newNode->left = helper(i, idx - 1, A, B);
         newNode->right = helper(idx + 1, j, A, B);
