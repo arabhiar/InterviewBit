@@ -13,7 +13,6 @@ class Trie
         int endsHere;
         TrieNode *child[CHAR_SIZE];
     };
-    TrieNode *root;
 
     // make a new TrieNode with given value.
     TrieNode *getNode(int idx)
@@ -30,6 +29,8 @@ class Trie
     }
 
 public:
+    TrieNode *root;
+
     // constructor for Trie.
     Trie()
     {
@@ -105,6 +106,25 @@ public:
             curr = curr->child[idx];
         }
         return curr ? curr->count : 0;
+    }
+
+    //  find shortest unique prefix for given list of words in trie.
+    void shortestUniquePrefix(TrieNode *root, vector<string> &ans, string prefix)
+    {
+        if (root == NULL)
+        {
+            return;
+        }
+        if (root->count == 1)
+        {
+            ans.push_back(prefix);
+            return;
+        }
+        for (auto child : root->child)
+        {
+            if (child)
+                shortestUniquePrefix(child, ans, prefix + child->val);
+        }
     }
 };
 
