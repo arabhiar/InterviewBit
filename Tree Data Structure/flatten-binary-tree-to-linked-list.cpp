@@ -1,0 +1,70 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define COUNT 3
+
+struct TreeNode
+{
+    int val;
+    TreeNode *left, *right, *next;
+    TreeNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {}
+};
+
+// Visualization of Tree
+void print2DUtil(TreeNode *root, int space)
+{
+    if (root == NULL)
+        return;
+    space += COUNT;
+    print2DUtil(root->right, space);
+    cout << endl;
+    for (int i = COUNT; i < space; i++)
+        cout << " ";
+    cout << root->val << "\n";
+    print2DUtil(root->left, space);
+}
+
+void print2D(TreeNode *root)
+{
+    print2DUtil(root, 0);
+}
+
+void helper(TreeNode *root)
+{
+    if (root == NULL || root->right == NULL && root->left == NULL)
+    {
+        return;
+    }
+    if (root->left)
+    {
+        helper(root->left);
+        TreeNode *temp = root->right;
+        root->right = root->left;
+        root->left = NULL;
+        TreeNode *ptr = root->right;
+        while (ptr->right != NULL)
+        {
+            ptr = ptr->right;
+        }
+        ptr->right = temp;
+    }
+    helper(root->right);
+}
+
+int main()
+{
+    TreeNode *root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(5);
+    root->right->left = new TreeNode(6);
+    root->right->right = new TreeNode(7);
+    root->left->left->left = new TreeNode(8);
+
+    helper(root);
+    print2D(root);
+
+    cout << endl;
+    return 0;
+}
