@@ -69,7 +69,8 @@ int main()
     root->right->right = new TreeNode(7);
     root->left->left->left = new TreeNode(8);
 
-    
+    helper(root);
+
     cout << endl;
     return 0;
 }
