@@ -18,7 +18,7 @@ int helper(string A, string B)
     {
         return 0;
     }
-    vector<vector<int>> dp(l1 + 1, vector<int>(l2 + 1, 0));
+    vector<vector<bool>> dp(l1 + 1, vector<bool>(l2 + 1, false));
     dp[0][0] = 1;
     int idx = 1;
     while (B[idx - 1] == '*')
