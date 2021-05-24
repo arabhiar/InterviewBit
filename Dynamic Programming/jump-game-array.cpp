@@ -11,7 +11,7 @@ bool helper(vector<int> A)
         {
             break;
         }
-        for (int j = i + 1; j <= i + A[i]; j++)
+        for (int j = i + 1; j <= i + A[i] && j < A.size(); j++)
         {
             dp[j] = true;
         }
