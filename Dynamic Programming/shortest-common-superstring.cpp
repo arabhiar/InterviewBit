@@ -3,6 +3,8 @@ using namespace std;
 
 int shortestSuperstring(vector<string> &A)
 {
+    
+    
     const int n = A.size();
     vector<vector<int>> g(n, vector<int>(n));
     for (int i = 0; i < n; ++i)
