@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// https://codevillage.wordpress.com/2016/09/06/mastering-dynamic-programming-2/
 int helper(string A, int B)
 {
     int l = A.length();
