@@ -26,25 +26,6 @@ int helper(vector<vector<int>> A)
     return count;
 }
 
-int solve(vector<vector<int>> &A)
-{
-    priority_queue<int, vector<int>, greater<int>> pq;
-    sort(A.begin(), A.end());
-    for (auto &i : A)
-    {
-        pq.push(i[1]);
-    }
-    int ans = 0;
-    for (int i = 0; i < A.size(); ++i)
-    {
-        if (!pq.empty() && A[i][0] >= pq.top())
-            pq.pop();
-        else
-            ++ans;
-    }
-    return ans;
-}
-
 int main()
 {
     int n;
