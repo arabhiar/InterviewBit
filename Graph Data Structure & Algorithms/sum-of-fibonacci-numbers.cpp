@@ -1,47 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// int helper(int A)
-// {
-//     // unordered_set<int> s;
-//     vector<bool> fib(A + 1, false);
-//     int prev = 1, curr = 1, temp;
-//     fib[1] = true;
-//     // s.insert(1);
-//     while (curr <= A)
-//     {
-//         temp = curr;
-//         curr = prev + curr;
-//         prev = temp;
-//         // s.insert(curr);
-//         if (curr <= A)
-//             fib[curr] = true;
-//     }
-//     int count = 0;
-//     int p = A;
-
-//     while (p)
-//     {
-//         if (fib[p] == false)
-//         {
-//             p--;
-//         }
-//         else
-//         {
-//             if (A - p >= 0)
-//             {
-//                 A -= p;
-//                 count++;
-//             }
-//             else
-//             {
-//                 p--;
-//             }
-//         }
-//     }
-//     return count;
-// }
-
 int helper(int A)
 {
     if (A == 1)
