@@ -31,7 +31,6 @@ int helper(vector<int> A, vector<vector<int>> B)
         g[B[i][0] - 1].push_back(B[i][1] - 1);
         g[B[i][1] - 1].push_back(B[i][0] - 1);
     }
-
     int totalSum = 0;
     for (int i = 0; i < A.size(); i++)
     {
