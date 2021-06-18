@@ -1,11 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int lastDigit(int n)
-{
-    return n % 10;
-}
-
 vector<int> helper(int A, int B)
 {
     vector<int> ans;
