@@ -8,7 +8,7 @@ class Compare
 public:
     bool operator()(PI p1, PI p2)
     {
-        return p1.second > p2.first;
+        return p1.second > p2.second;
     }
 };
 
